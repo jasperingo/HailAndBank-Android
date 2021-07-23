@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/medium_padding"
+    tools:context=".ui.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dash_board_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/medium_padding"
+        android:background="@drawable/blue_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:id="@id/account_balance_label_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/account_balance"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@id/account_balance_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="N 50,000.00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/xxlarge_text"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_balance_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/account_number_label_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/account_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text"
+            android:layout_marginTop="@dimen/medium_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_balance_text_view"
+            />
+
+        <TextView
+            android:id="@id/account_number_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1123234554"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/large_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_number_label_text_view"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fund_account"
+            android:textAllCaps="false"
+            android:textColor="@color/steel_blue_500"
+            android:background="@drawable/round_button_bg"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_number_text_view"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+       android:id="@id/new_orders_button"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/no_new_order_available"
+       android:textColor="@color/black"
+       android:textSize="@dimen/medium_text"
+       android:gravity="center_vertical"
+       android:textAllCaps="false"
+       android:background="@drawable/gray_border"
+       android:layout_marginTop="@dimen/medium_margin"
+       app:backgroundTint="@null"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/dash_board_top"
+       />
+
+    <TextView
+        android:id="@id/our_services_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/our_services"
+        android:textStyle="bold"
+        android:textSize="@dimen/large_text"
+        android:textColor="@color/steel_blue_500"
+        android:layout_marginTop="@dimen/large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_orders_button"
+        />
+
+    <Button
+        android:id="@+id/cash_delivery_service_button"
+        android:text="@string/cash_delivery"
+        android:drawableLeft="@drawable/ic_outline_big_delivery"
+        style="@style/MyOurServiceButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/our_services_text_view"
+        />
+
+    <Button
+        android:id="@+id/cash_pick_up_service_button"
+        android:text="@string/cash_pick_up"
+        android:drawableLeft="@drawable/ic_outline_big_pick_up"
+        style="@style/MyOurServiceButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cash_delivery_service_button"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

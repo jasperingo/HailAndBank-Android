@@ -30,6 +30,16 @@
     <item name="text_view_form_error" type="id" />
 
 
+    <item name="account_balance_label_text_view" type="id" />
+    <item name="account_balance_text_view" type="id" />
+
+    <item name="account_number_label_text_view" type="id" />
+    <item name="account_number_text_view" type="id" />
+
+    <item name="new_orders_button" type="id" />
+    <item name="our_services_text_view" type="id" />
+
+
 </resources>
 
 

@@ -48,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
 
             runOnUiThread(() -> {
 
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, DashboardActivity.class);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
