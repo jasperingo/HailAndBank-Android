@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/layout_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    tools:context=".ui.LoginFragment">
+
+
+    <include
+        layout="@layout/account_type_radio_group"
+        style="@style/MyAccountTypeRadioButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_phone_number"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.2"
+        />
+
+    <include
+        layout="@layout/basic_phone_number_edit_text"
+        style="@style/MyBasicEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group_account_type"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_pin"
+        />
+
+    <include
+        layout="@layout/basic_pin_edit_text"
+        style="@style/MyBasicEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_phone_number"
+        app:layout_constraintBottom_toTopOf="@id/button_submit"
+        />
+
+    <Button
+        android:id="@id/button_submit"
+        android:text="@string/sign_in"
+        style="@style/MyBasicWhiteButton.MyBasicButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_pin"
+        app:layout_constraintBottom_toTopOf="@id/button_do_not_have_an_account"
+        />
+
+    <!--<Button
+        android:id="@id/button_forgot_password"
+
+        android:text="@string/forgot_password"
+        android:textColor="@color/steel_blue_200"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:background="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_submit"
+        />-->
+
+    <Button
+        android:id="@id/button_do_not_have_an_account"
+        android:text="@string/do_not_have_an_account"
+        style="@style/MyBasicWhiteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_submit"
+        />
+
+    <ProgressBar
+        android:id="@id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="@color/transparent_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

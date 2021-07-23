@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="loading" type="id" />
+
+    <item name="splash_screen_1" type="id" />
+
+    <item name="main_activity_fragment" type="id" />
+
+    <item name="layout_form" type="id" />
+    <item name="sign_in_header" type="id" />
+    <item name="welcome_back_text_view" type="id" />
+    <item name="welcome_back_user_name_text_view" type="id" />
+    <item name="radio_group_account_type" type="id" />
+    <item name="radio_button_customer" type="id" />
+    <item name="radio_button_merchant" type="id" />
+    <item name="edit_text_first_name" type="id" />
+    <item name="edit_text_last_name" type="id" />
+    <item name="edit_text_phone_number" type="id" />
+    <item name="edit_text_pin" type="id" />
+    <item name="button_submit" type="id" />
+    <item name="button_change_account" type="id" />
+    <item name="button_have_an_account" type="id" />
+    <item name="button_do_not_have_an_account" type="id" />
+    <item name="button_forgot_password" type="id" />
+    <item name="edit_text_first_name_error" type="id" />
+    <item name="edit_text_last_name_error" type="id" />
+    <item name="edit_text_phone_number_error" type="id" />
+    <item name="edit_text_pin_error" type="id" />
+    <item name="text_view_form_error" type="id" />
+
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

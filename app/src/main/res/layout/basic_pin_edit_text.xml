@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/edit_text_pin"
+    android:autofillHints="PIN"
+    android:hint="@string/pin"
+    android:inputType="numberPassword"
+    android:maxLength="4"
+    style="@style/MyBasicEditText"
+    tools:showIn="@layout/fragment_login"
+    />
+
+
