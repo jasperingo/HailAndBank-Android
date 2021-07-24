@@ -73,10 +73,24 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/withdraw"
+            android:textAllCaps="false"
+            android:textColor="@color/steel_blue_500"
+            android:background="@drawable/round_button_bg"
+            android:layout_marginTop="@dimen/medium_margin"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_number_text_view"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/fund_account"
             android:textAllCaps="false"
             android:textColor="@color/steel_blue_500"
             android:background="@drawable/round_button_bg"
+            android:layout_marginTop="@dimen/medium_margin"
             app:backgroundTint="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_number_text_view"
@@ -85,10 +99,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-       android:id="@id/new_orders_button"
+       android:id="@id/new_transaction_request_button"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="@string/no_new_order_available"
+       android:text="@string/num_new_transaction_requests"
        android:textColor="@color/black"
        android:textSize="@dimen/medium_text"
        android:gravity="center_vertical"
@@ -112,7 +126,7 @@
         android:layout_marginTop="@dimen/large_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/new_orders_button"
+        app:layout_constraintTop_toBottomOf="@id/new_transaction_request_button"
         />
 
     <Button

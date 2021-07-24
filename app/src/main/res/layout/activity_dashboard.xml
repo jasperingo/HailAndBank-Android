@@ -20,7 +20,7 @@
             />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@id/main_activity_fragment"
+            android:id="@id/dashboard_activity_fragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -41,7 +41,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@android:color/white"
-        android:paddingTop="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         app:menu="@menu/drawer_menu"
         android:theme="@style/MyDrawerNavigationTheme"
         app:itemTextAppearance="@style/MyDrawerNavigationItems"

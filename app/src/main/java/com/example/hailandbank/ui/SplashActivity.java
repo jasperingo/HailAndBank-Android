@@ -3,17 +3,13 @@ package com.example.hailandbank.ui;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.hailandbank.R;
 
@@ -26,10 +22,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        TextView tv = findViewById(R.id.splash_screen_1);
+        LinearLayout ll = findViewById(R.id.splash_screen_1);
 
         AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.splash_screen);
-        set.setTarget(tv);
+        set.setTarget(ll);
         set.start();
 
     }

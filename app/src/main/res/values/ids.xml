@@ -6,6 +6,7 @@
     <item name="splash_screen_1" type="id" />
 
     <item name="main_activity_fragment" type="id" />
+    <item name="dashboard_activity_fragment" type="id" />
 
     <item name="layout_form" type="id" />
     <item name="sign_in_header" type="id" />
@@ -36,8 +37,37 @@
     <item name="account_number_label_text_view" type="id" />
     <item name="account_number_text_view" type="id" />
 
-    <item name="new_orders_button" type="id" />
+    <item name="new_transaction_request_button" type="id" />
     <item name="our_services_text_view" type="id" />
+
+    <item name="profile_image_view" type="id" />
+    <item name="profile_account_type_text_view" type="id" />
+
+    <item name="profile_full_name_label_text_view" type="id" />
+    <item name="profile_full_name_text_view" type="id" />
+
+    <item name="profile_phone_number_label_text_view" type="id" />
+    <item name="profile_phone_number_text_view" type="id" />
+
+    <item name="profile_merchant_name_label_text_view" type="id" />
+    <item name="profile_merchant_name_text_view" type="id" />
+    <item name="profile_merchant_name_edit_button" type="id" />
+
+    <item name="profile_merchant_code_label_text_view" type="id" />
+    <item name="profile_merchant_code_text_view" type="id" />
+
+    <item name="profile_address_street_label_text_view" type="id" />
+    <item name="profile_address_street_text_view" type="id" />
+
+    <item name="profile_address_city_label_text_view" type="id" />
+    <item name="profile_address_city_text_view" type="id" />
+
+    <item name="profile_address_state_label_text_view" type="id" />
+    <item name="profile_address_state_text_view" type="id" />
+
+    <item name="profile_address_label_text_view" type="id" />
+    <item name="profile_address_edit_button" type="id" />
+
 
 
 </resources>

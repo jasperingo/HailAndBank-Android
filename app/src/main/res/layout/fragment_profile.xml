@@ -1,16 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ProfileFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/medium_padding"
+        >
+        <ImageView
+            android:id="@id/profile_image_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/user"
+            android:contentDescription="@string/icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@id/profile_account_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merchant"
+            android:textSize="@dimen/xlarge_text"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/large_margin"
+            android:layout_marginStart="@dimen/large_margin"
+            app:layout_constraintStart_toEndOf="@id/profile_image_view"
+            app:layout_constraintTop_toTopOf="@id/profile_image_view"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image_view"
+            />
+
+        <TextView
+            android:id="@id/profile_full_name_label_text_view"
+            android:text="@string/full_name"
+            style="@style/MyProfileDataLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image_view"
+            />
+
+        <TextView
+            android:id="@id/profile_full_name_text_view"
+            android:text="@string/fake_name"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_full_name_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_phone_number_label_text_view"
+            android:text="@string/phone_number"
+            style="@style/MyProfileDataLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_full_name_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_phone_number_text_view"
+            android:text="@string/fake_phone"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_phone_number_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_merchant_name_label_text_view"
+            android:text="@string/merchant_name"
+            style="@style/MyProfileDataLabel.Width0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profile_merchant_name_edit_button"
+            app:layout_constraintTop_toBottomOf="@id/profile_phone_number_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_merchant_name_text_view"
+            android:text="@string/fake_mname"
+            style="@style/MyProfileData.Width0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profile_merchant_name_edit_button"
+            app:layout_constraintTop_toBottomOf="@id/profile_merchant_name_label_text_view"
+            />
+
+        <ImageButton
+            android:id="@id/profile_merchant_name_edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outline_edit"
+            android:contentDescription="@string/icon"
+            android:background="@drawable/round_button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profile_merchant_name_label_text_view"
+            app:layout_constraintBottom_toBottomOf="@id/profile_merchant_name_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_merchant_code_label_text_view"
+            android:text="@string/merchant_code"
+            style="@style/MyProfileDataLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_merchant_name_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_merchant_code_text_view"
+            android:text="@string/fake_mcode"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_merchant_code_label_text_view"
+            />
 
 
-</FrameLayout>
+        <TextView
+            android:id="@id/profile_address_label_text_view"
+            android:text="@string/address"
+            style="@style/MyProfileDataLabel.Width0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profile_address_edit_button"
+            app:layout_constraintTop_toBottomOf="@id/profile_merchant_code_text_view"
+            />
+
+        <ImageButton
+            android:id="@id/profile_address_edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outline_edit"
+            android:contentDescription="@string/icon"
+            android:background="@drawable/round_button_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profile_address_label_text_view"
+            app:layout_constraintBottom_toBottomOf="@id/profile_address_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_street_label_text_view"
+            android:text="@string/street"
+            style="@style/MyProfileDataSubLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_street_text_view"
+            android:text="@string/fake_addr_street"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_street_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_city_label_text_view"
+            android:text="@string/city"
+            style="@style/MyProfileDataSubLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_street_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_city_text_view"
+            android:text="@string/fake_addr_city"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_city_label_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_state_label_text_view"
+            android:text="@string/state"
+            style="@style/MyProfileDataSubLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_city_text_view"
+            />
+
+        <TextView
+            android:id="@id/profile_address_state_text_view"
+            android:text="@string/fake_addr_state"
+            style="@style/MyProfileData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_address_state_label_text_view"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
 
 

@@ -53,23 +53,41 @@
     <string name="account_type">Account type</string>
     <string name="customer">Customer</string>
     <string name="merchant">Merchant</string>
+    <string name="full_name">Full name</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
+    <string name="merchant_name">Merchant name</string>
+    <string name="merchant_code">Merchant code</string>
     <string name="phone_number">Phone number</string>
     <string name="pin">PIN</string>
+    <string name="address">Address</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+
+
+    <string name="fake_name">Fried Fish</string>
+    <string name="fake_phone">08034568211</string>
+    <string name="fake_mname">Money Pot</string>
+    <string name="fake_mcode">WE4E3</string>
+    <string name="fake_addr_street">No 3 Milk street</string>
+    <string name="fake_addr_city">Cow Town</string>
+    <string name="fake_addr_state">Sokoto State</string>
 
 
     <string name="account_balance">Account balance</string>
     <string name="account_number">Account number</string>
     <string name="fund_account">Fund account</string>
+    <string name="withdraw">Withdraw</string>
     <string name="profile">Profile</string>
+    <string name="service_transactions">Service transactions</string>
+    <string name="transaction_requests">Transaction requests</string>
     <string name="transactions">Transactions</string>
     <string name="dashboard">Dashboard</string>
     <string name="settings">Settings</string>
     <string name="log_out">Log out</string>
 
-    <string name="no_new_order_available">No new order available</string>
-    <string name="num_new_orders_available">5 new orders available</string>
+    <string name="num_new_transaction_requests">5 new transaction requests</string>
 
     <string name="our_services">Our services</string>
     <string name="cash_delivery">Cash delivery</string>
