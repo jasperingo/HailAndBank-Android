@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_logOutDialogFragment"
+            app:destination="@id/logOutDialogFragment" />
     </fragment>
 
     <fragment
@@ -20,5 +23,20 @@
         android:name="com.example.hailandbank.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <dialog
+        android:id="@+id/logOutDialogFragment"
+        android:name="com.example.hailandbank.ui.LogOutDialogFragment"
+        android:label="LogOutDialogFragment" >
+        <action
+            android:id="@+id/action_logOutDialogFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </dialog>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.hailandbank.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 
 </navigation>

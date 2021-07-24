@@ -1,8 +1,13 @@
 package com.example.hailandbank.ui;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -12,15 +17,11 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-
 import com.example.hailandbank.R;
 import com.google.android.material.navigation.NavigationView;
 
 import org.jetbrains.annotations.NotNull;
+
 
 public class DashboardActivity extends AppCompatActivity implements NavController.OnDestinationChangedListener {
 
@@ -35,14 +36,14 @@ public class DashboardActivity extends AppCompatActivity implements NavControlle
         setContentView(R.layout.activity_dashboard);
 
         Toolbar toolbar = findViewById(R.id.main_toolbar);
-
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        getSupportActionBar().setTitle(null);
-
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(null);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        }
 
         toolbarText1 = findViewById(R.id.toolbar_text1);
         toolbarText2 = findViewById(R.id.toolbar_text2);
@@ -80,18 +81,20 @@ public class DashboardActivity extends AppCompatActivity implements NavControlle
         toolbarText2.setVisibility(View.GONE);
         toolbarText3.setVisibility(View.GONE);
 
-        if (destination.getId() == R.id.dashboardFragment) {
+        if (destination.getId() == R.id.profileFragment) {
+            toolbarText1.setText(R.string.profile);
+        } else {
             toolbarText1.setText(R.string.hail);
             toolbarText2.setVisibility(View.VISIBLE);
             toolbarText3.setVisibility(View.VISIBLE);
-        } else if (destination.getId() == R.id.profileFragment) {
-            toolbarText1.setText(R.string.profile);
         }
 
     }
 
 
 }
+
+
 
 
 
