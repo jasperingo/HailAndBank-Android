@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="states">
+        <item>--States--</item>
+        <item>Rivers State</item>
+        <item>Imo state</item>
+        <item>Abia state</item>
+    </string-array>
+
+    <string-array name="cities_blank">
+        <item>--Cities--</item>
+    </string-array>
+
+    <string-array name="cities_in_rivers_state">
+        <item>--Cities--</item>
+        <item>Abalama</item>
+        <item>Abonnema</item>
+        <item>Ahoada</item>
+        <item>Ataba</item>
+        <item>Bane</item>
+        <item>Bonny</item>
+        <item>Bori</item>
+        <item>Bodo</item>
+        <item>Buguma</item>
+        <item>Degema Town</item>
+        <item>Eberi</item>
+        <item>Elele</item>
+        <item>Emohua</item>
+        <item>Igrita</item>
+        <item>Igwuruta</item>
+        <item>Nkoro</item>
+        <item>Odiabidi</item>
+        <item>Okehi</item>
+        <item>Okobie</item>
+        <item>Okoloma</item>
+        <item>Okomoko</item>
+        <item>Okrika</item>
+        <item>Omoku</item>
+        <item>Onne</item>
+        <item>Opobo</item>
+        <item>Oyigbo</item>
+        <item>Port Harcourt</item>
+        <item>Rumuokoro</item>
+        <item>Umuagbai</item>
+    </string-array>
+
+    <string-array name="cities_in_imo_state">
+        <item>--Cities--</item>
+        <item>Aboh Mbaise</item>
+        <item>Ahiazu Mbaise</item>
+        <item>Ehime Mbano</item>
+        <item>Ezinihitte Mbaise</item>
+        <item>Ideato North</item>
+        <item>Ideato South</item>
+        <item>Ihitte/Uboma</item>
+        <item>Ikeduru</item>
+        <item>Isiala Mbano</item>
+        <item>Isu</item>
+        <item>Mbaitoli</item>
+        <item>Ngor Okpala</item>
+        <item>Njaba</item>
+        <item>Nkwerre</item>
+        <item>Nwangele</item>
+        <item>Obowo</item>
+        <item>Oguta</item>
+        <item>Ohaji/Egbema</item>
+        <item>Okigwe</item>
+        <item>Onuimo</item>
+        <item>Orlu</item>
+        <item>Orsu</item>
+        <item>Oru East</item>
+        <item>Oru West</item>
+        <item>Owerri Municipal</item>
+        <item>Owerri North</item>
+        <item>Owerri West</item>
+        <item>Njaba South</item>
+    </string-array>
+
+    <string-array name="cities_in_abia_state">
+        <item>--Cities--</item>
+        <item>Aba</item>
+        <item>Abiriba</item>
+        <item>Amaeke</item>
+        <item>Arochukwu</item>
+        <item>Bende</item>
+        <item>Igbere</item>
+        <item>Nbawsi</item>
+        <item>Ohafia</item>
+        <item>Omoba</item>
+        <item>Ovim</item>
+        <item>Umuahia</item>
+        <item>Umudike</item>
+    </string-array>
+
+    <string-array name="banks">
+        <item>--Banks--</item>
+        <item>Access Bank Plc</item>
+        <item>Fidelity Bank Plc</item>
+        <item>First City Monument Bank Limited</item>
+        <item>First Bank of Nigeria Limited</item>
+        <item>Guaranty Trust Bank Plc</item>
+        <item>Union Bank of Nigeria Plc</item>
+        <item>United Bank for Africa Plc</item>
+        <item>Zenith Bank Plc</item>
+
+        <item>Citibank Nigeria Limited</item>
+        <item>Ecobank Nigeria</item>
+        <item>Heritage Bank Plc</item>
+        <item>Keystone Bank Limited</item>
+        <item>Polaris Bank Limited</item>
+        <item>Stanbic IBTC Bank Plc</item>
+        <item>Standard Chartered</item>
+        <item>Sterling Bank Plc</item>
+        <item>Titan Trust Bank Limited</item>
+        <item>Unity Bank Plc</item>
+        <item>Wema Bank Plc</item>
+
+        <item>Globus Bank Limited</item>
+        <item>SunTrust Bank Nigeria Limited</item>
+        <item>Providus Bank Limited</item>
+    </string-array>
+
+    <string-array name="account_types">
+        <item>--Account type--</item>
+        <item>Savings</item>
+        <item>Current</item>
+    </string-array>
+
+</resources>
+
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/bank_name_spinner"
+        style="@style/MyBasicSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bank_name_spinner_error"
+        />
+
+    <TextView
+        android:id="@+id/bank_name_spinner_error"
+        android:text="@string/field_is_required"
+        style="@style/MyBasicEditTextError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bank_name_spinner"
+        />
+
+    <EditText
+        android:id="@+id/number_edit_text"
+        android:autofillHints="FirstName"
+        android:hint="@string/account_number"
+        android:inputType="number"
+        style="@style/MyBasicEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bank_name_spinner_error"
+        app:layout_constraintBottom_toTopOf="@id/number_edit_text_error"
+        />
+
+    <TextView
+        android:id="@+id/number_edit_text_error"
+        android:text="@string/field_is_required"
+        style="@style/MyBasicEditTextError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_edit_text"
+        />
+
+    <Spinner
+        android:id="@+id/type_spinner"
+        style="@style/MyBasicSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_edit_text_error"
+        app:layout_constraintBottom_toTopOf="@id/type_spinner_error"
+        />
+
+    <TextView
+        android:id="@+id/type_spinner_error"
+        android:text="@string/field_is_required"
+        style="@style/MyBasicEditTextError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_spinner"
+        />
+
+
+    <ProgressBar
+        android:id="@id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:padding="@dimen/medium_padding"
+        android:background="@color/transparent_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

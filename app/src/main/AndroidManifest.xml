@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hailandbank">
+    package="com.example.hailandbank" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".utils.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HailAndBank">
-        <activity android:name=".ui.DashboardActivity"></activity>
+        android:theme="@style/Theme.HailAndBank"
+        android:usesCleartextTraffic="true" >
+
+        <activity
+            android:name=".ui.CheckOutActivity"
+            android:parentActivityName=".ui.DashboardActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.DashboardActivity" />
+        </activity>
+        <activity android:name=".ui.DashboardActivity" />
         <activity
             android:name=".ui.SplashActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,3 +39,4 @@
     </application>
 
 </manifest>
+

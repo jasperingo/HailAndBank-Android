@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/medium_padding"
+    android:background="@drawable/gray_bottom_border"
+    >
+
+    <TextView
+        android:id="@+id/reference_code_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="#EE454F45"
+        android:textColor="@color/steel_blue_500"
+        android:textSize="@dimen/xlarge_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/amount_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="N 300.00"
+        android:textStyle="bold"
+        android:textColor="@color/light_sea_green_700"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reference_code_text_view"
+        />
+
+    <TextView
+        android:id="@+id/type_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deposit"
+        android:textColor="@color/black"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toStartOf="@id/status_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amount_text_view"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        />
+
+    <TextView
+        android:id="@+id/status_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pending"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/type_text_view"
+        app:layout_constraintTop_toBottomOf="@id/amount_text_view"
+        />
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="09:20pm 21th Jun 2021"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/type_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

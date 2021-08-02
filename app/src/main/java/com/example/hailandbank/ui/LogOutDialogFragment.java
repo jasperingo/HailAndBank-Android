@@ -11,6 +11,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.hailandbank.R;
+import com.example.hailandbank.utils.MyApplication;
+
 
 public class LogOutDialogFragment extends DialogFragment {
 
@@ -23,6 +25,8 @@ public class LogOutDialogFragment extends DialogFragment {
                     NavHostFragment.findNavController(LogOutDialogFragment.this)
                             .navigate(R.id.action_logOutDialogFragment_to_mainActivity);
 
+                    ((MyApplication)requireActivity().getApplication()).setUser(null);
+
                     requireActivity().finish();
                 })
                 .setNegativeButton(getString(R.string.no), (dialog, which) -> dialog.dismiss())
@@ -31,4 +35,6 @@ public class LogOutDialogFragment extends DialogFragment {
 
 
 }
+
+
 

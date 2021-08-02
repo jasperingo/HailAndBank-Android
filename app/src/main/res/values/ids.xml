@@ -21,8 +21,7 @@
     <item name="edit_text_pin" type="id" />
     <item name="button_submit" type="id" />
     <item name="button_change_account" type="id" />
-    <item name="button_have_an_account" type="id" />
-    <item name="button_do_not_have_an_account" type="id" />
+    <item name="button_switch" type="id" />
     <item name="button_forgot_password" type="id" />
     <item name="edit_text_first_name_error" type="id" />
     <item name="edit_text_last_name_error" type="id" />
@@ -37,7 +36,9 @@
     <item name="account_number_label_text_view" type="id" />
     <item name="account_number_text_view" type="id" />
 
-    <item name="new_transaction_request_button" type="id" />
+    <item name="order_notification_button" type="id" />
+    <item name="customer_order_notification_button" type="id" />
+
     <item name="our_services_text_view" type="id" />
 
     <item name="profile_image_view" type="id" />
@@ -56,6 +57,13 @@
     <item name="profile_merchant_code_label_text_view" type="id" />
     <item name="profile_merchant_code_text_view" type="id" />
 
+    <item name="profile_merchant_status_label_text_view" type="id" />
+    <item name="profile_merchant_status_text_view" type="id" />
+
+    <item name="profile_pin_label_text_view" type="id" />
+    <item name="profile_pin_text_view" type="id" />
+    <item name="profile_pin_edit_button" type="id" />
+
     <item name="profile_address_street_label_text_view" type="id" />
     <item name="profile_address_street_text_view" type="id" />
 
@@ -69,19 +77,22 @@
     <item name="profile_address_edit_button" type="id" />
 
 
+    <item name="profile_settlement_account_label_text_view" type="id" />
+    <item name="profile_settlement_account_edit_button" type="id" />
+
+    <item name="profile_settlement_account_bank_label_text_view" type="id" />
+    <item name="profile_settlement_account_bank_text_view" type="id" />
+
+    <item name="profile_settlement_account_number_label_text_view" type="id" />
+    <item name="profile_settlement_account_number_text_view" type="id" />
+
+    <item name="profile_settlement_account_type_label_text_view" type="id" />
+    <item name="profile_settlement_account_type_text_view" type="id" />
+
+
+
 
 </resources>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -10,10 +10,25 @@
 
     <string name="chill">Chill :)</string>
 
+    <string name="__amount">&#x20A6; %.2f</string>
+
+    <string name="pin____">* * * *</string>
+    <string name="__not_set__">--Not set--</string>
+
     <string name="icon">Icon</string>
 
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="add">Add</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="later">Later</string>
+    <string name="complete">Complete</string>
+    <string name="could_not_load_data">Could not load data</string>
+    <string name="session_expired">Your session has expired</string>
+
+    <string name="no_internet_connection">No internet connection</string>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -38,19 +53,30 @@
 
     <!-- Strings related to errors -->
     <string name="unknown_error_occurred">Oops! An error occurred.</string>
-    <string name="credentials_incorrect">Phone number or pin is incorrect</string>
+    <string name="credentials_incorrect">Credentials are incorrect</string>
     <string name="field_is_required">This field is required</string>
     <string name="phone_number_invalid">This phone number is invalid</string>
     <string name="pin_invalid">Pin is invalid</string>
+    <string name="new_pin_invalid">New pin is invalid</string>
+    <string name="merchant_name_invalid">Merchant name is invalid</string>
+    <string name="address_is_invalid">Address is invalid</string>
+    <string name="fund_amount_invalid">Minimum funding is &#x20A6; 100.00</string>
+    <string name="withdraw_amount_invalid">Maximum withdrawal is invalid</string>
+    <string name="withdraw_amount_maximum_invalid">Maximum withdrawal is &#x20A6; %.2f</string>
+    <string name="withdraw_amount_minimum_invalid">Minimum withdrawal is &#x20A6; 1000.00</string>
 
 
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
-    <string name="signing_up_back_pressed">"Please wait while we sign you up"</string>
+    <string name="please_wait">Please wait…</string>
     <string name="change_account">Change account</string>
     <string name="forgot_password">Forgot password</string>
     <string name="have_an_account">Already have an account? Sign in</string>
     <string name="do_not_have_an_account">Don\'t have an account? Sign up</string>
+    <string name="change_pin">Change PIN</string>
+    <string name="change_address">Change address</string>
+    <string name="change_merchant_name">Change merchant name</string>
+    <string name="change_settlement_account">Change settlement account</string>
 
     <string name="welcome_back">Welcome back</string>
     <string name="account_type">Account type</string>
@@ -61,13 +87,17 @@
     <string name="last_name">Last name</string>
     <string name="merchant_name">Merchant name</string>
     <string name="merchant_code">Merchant code</string>
+    <string name="merchant_status">Merchant status</string>
     <string name="phone_number">Phone number</string>
     <string name="pin">PIN</string>
+    <string name="old_pin">OLD PIN</string>
+    <string name="new_pin">NEW PIN</string>
     <string name="address">Address</string>
     <string name="street">Street</string>
     <string name="city">City</string>
     <string name="state">State</string>
-
+    <string name="settlement_account">Settlement account</string>
+    <string name="bank_name">Bank name</string>
 
     <string name="fake_name">Fried Fish</string>
     <string name="fake_phone">08034568211</string>
@@ -81,21 +111,31 @@
     <string name="account_balance">Account balance</string>
     <string name="account_number">Account number</string>
     <string name="fund_account">Fund account</string>
+    <string name="fund">Fund</string>
     <string name="withdraw">Withdraw</string>
     <string name="profile">Profile</string>
-    <string name="service_transactions">Service transactions</string>
-    <string name="transaction_requests">Transaction requests</string>
+    <string name="orders">Orders</string>
+    <string name="pending_orders">Pending orders</string>
+    <string name="customer_orders">Customer orders</string>
+    <string name="notifications">Notifications</string>
     <string name="transactions">Transactions</string>
     <string name="dashboard">Dashboard</string>
     <string name="settings">Settings</string>
     <string name="log_out">Log out</string>
     <string name="confirm_log_out_msg">Are you sure you want to log out?</string>
+    <string name="inactive_merchant_prompt">Your account is currently inactive, complete your profile to activate your account.</string>
+    <string name="no_settlement_account_prompt">You have to add a settlement account to be able to withdraw</string>
 
-    <string name="num_new_transaction_requests">5 new transaction requests</string>
+    <string name="num_new_orders_notification">5 new order notifications</string>
+    <string name="num_new_customer_orders">5 new customer orders</string>
 
     <string name="our_services">Our services</string>
     <string name="cash_delivery">Cash delivery</string>
     <string name="cash_pick_up">Cash pick up</string>
+
+    <string name="enter_amount">Enter amount</string>
+
+    <string name="check_out">Check Out</string>
 
 
 </resources>

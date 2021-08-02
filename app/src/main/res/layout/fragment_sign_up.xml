@@ -72,6 +72,7 @@
         style="@style/MyBasicEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/small_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/edit_text_pin"
         app:layout_constraintTop_toBottomOf="@id/edit_text_last_name_error"
@@ -85,6 +86,7 @@
         style="@style/MyBasicEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/small_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edit_text_phone_number"
         app:layout_constraintTop_toBottomOf="@id/edit_text_last_name_error"
@@ -124,11 +126,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_phone_number_error"
-        app:layout_constraintBottom_toTopOf="@id/button_have_an_account"
+        app:layout_constraintBottom_toTopOf="@id/button_switch"
         />
 
     <Button
-        android:id="@id/button_have_an_account"
+        android:id="@id/button_switch"
         android:text="@string/have_an_account"
         style="@style/MyBasicWhiteButton"
         android:layout_marginBottom="@dimen/xxlarge_margin"

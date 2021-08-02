@@ -1,31 +1,32 @@
 package com.example.hailandbank.ui;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-
-import com.example.hailandbank.viewmodels.LoginViewModel;
 import com.example.hailandbank.R;
+import com.example.hailandbank.api.Result;
+import com.example.hailandbank.models.AuthToken;
+import com.example.hailandbank.models.User;
+import com.example.hailandbank.utils.MyApplication;
+import com.example.hailandbank.viewmodels.LoginViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
 
-public class LoginFragment extends Fragment implements View.OnClickListener {
+public class LoginFragment extends AuthFragment implements View.OnClickListener {
 
-    private LoginViewModel loginViewModel;
+    private LoginViewModel viewModel;
 
-    public LoginFragment() {
-        super(R.layout.fragment_login);
-    }
+
+    public LoginFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,115 +35,90 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.fragment_login, container, false);
+    }
+
+    @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
-        //.get(LoginViewModel.class);
+        viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
-        final EditText usernameEditText = view.findViewById(R.id.edit_text_phone_number);
-        final EditText passwordEditText = view.findViewById(R.id.edit_text_pin);
-        final Button loginButton = view.findViewById(R.id.button_submit);
-        final Button gotoSignUp = view.findViewById(R.id.button_do_not_have_an_account);
-        final ProgressBar loadingProgressBar = view.findViewById(R.id.loading);
+        viewModel.getErrorResult().observe(getViewLifecycleOwner(), this::onLoginError);
 
-        gotoSignUp.setOnClickListener(this);
+        viewModel.getInputErrorResult().observe(getViewLifecycleOwner(), this::onInputResult);
 
-        /*loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
-            @Override
-            public void onChanged(@Nullable LoginFormState loginFormState) {
-                if (loginFormState == null) {
-                    return;
-                }
-                loginButton.setEnabled(loginFormState.isDataValid());
-                if (loginFormState.getUsernameError() != null) {
-                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
-                }
-                if (loginFormState.getPasswordError() != null) {
-                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
-                }
-            }
-        });
+        viewModel.getSuccessResult().observe(getViewLifecycleOwner(), this::onSuccessResult);
 
-        loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
-            @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
+        submitButton.setOnClickListener(this);
+        switchButton.setOnClickListener(this);
 
-                //Complete and destroy login activity once successful
-                finish();
-            }
-        });
-
-        TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // ignore
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // ignore
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        };
-        usernameEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
-                }
-                return false;
-            }
-        });
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        });*/
     }
 
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.button_do_not_have_an_account) {
+        if (v.getId() == R.id.button_switch) {
             NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_signUpFragment);
         }
 
+        if (v.getId() == R.id.button_submit) {
+            if (((MyApplication)requireActivity().getApplication()).isOnline()) {
+
+                viewModel.validateData(
+                    phoneNumberEditText.getText().toString(),
+                    pinEditText.getText().toString()
+                );
+
+            } else {
+                Toast.makeText(requireContext(), getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
-    /*private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+    private void showLoading(boolean isLoading) {
+        callback.setEnabled(isLoading);
+        phoneNumberEditText.setEnabled(!isLoading);
+        pinEditText.setEnabled(!isLoading);
+        submitButton.setEnabled(!isLoading);
+        switchButton.setEnabled(!isLoading);
+        customerRadioButton.setEnabled(!isLoading);
+        merchantRadioButton.setEnabled(!isLoading);
+        loadingProgressBar.setVisibility(isLoading? View.VISIBLE : View.GONE);
     }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
-    }*/
+    public void onLoginError(Result.Error<Void> error) {
+        showLoading(false);
+        Toast.makeText(requireContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+    }
+
+    public void onInputResult(Boolean hasError) {
+        if (!hasError) {
+            showLoading(true);
+            viewModel.signInUser(
+                getAccountType(),
+                phoneNumberEditText.getText().toString(),
+                pinEditText.getText().toString()
+            );
+        } else {
+            showLoading(false);
+            Toast.makeText(requireContext(), getString(R.string.credentials_incorrect), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onSuccessResult(Result.Success<AuthToken> result) {
+
+        User user = new User();
+        user.setType(getAccountType());
+        user.setPhoneNumber(phoneNumberEditText.getText().toString());
+        user.setAuthToken(result.getData());
+        mainActivityViewModel.putUser(user);
+    }
+
+
 
 
 }

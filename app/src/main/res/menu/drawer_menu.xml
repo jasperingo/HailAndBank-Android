@@ -17,19 +17,25 @@
             />
 
         <item
-            android:id="@+id/nav_transaction_requests"
-            android:title="@string/transaction_requests"
-            android:icon="@drawable/ic_outline_notifications"
+            android:id="@+id/pendingOrdersFragment"
+            android:title="@string/pending_orders"
+            android:icon="@drawable/ic_blue_hourglass"
             />
 
         <item
-            android:id="@+id/nav_s_transactions"
-            android:title="@string/service_transactions"
+            android:id="@+id/customerOrdersFragment"
+            android:title="@string/customer_orders"
             android:icon="@drawable/ic_outline_payments"
             />
 
         <item
-            android:id="@+id/nav_transactions"
+            android:id="@+id/ordersFragment"
+            android:title="@string/orders"
+            android:icon="@drawable/ic_outline_blue_order"
+            />
+
+        <item
+            android:id="@+id/transactionsFragment"
             android:title="@string/transactions"
             android:icon="@drawable/ic_blue_history"
             />

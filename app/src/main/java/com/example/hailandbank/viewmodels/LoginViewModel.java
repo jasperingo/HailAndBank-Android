@@ -4,65 +4,102 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
+import com.example.hailandbank.api.Api;
+import com.example.hailandbank.api.ErrorParser;
+import com.example.hailandbank.api.Result;
+import com.example.hailandbank.api.UserApi;
+import com.example.hailandbank.models.AuthToken;
+import com.example.hailandbank.models.Customer;
+import com.example.hailandbank.models.Merchant;
+import com.example.hailandbank.models.User;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+import java.util.regex.Pattern;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
-public class LoginViewModel extends ViewModel {
+public class LoginViewModel extends ViewModel implements Callback<Result.Success<AuthToken>> {
 
-    /*private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
-    private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
-    private LoginRepository loginRepository;
 
-    LoginViewModel(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
+    private final MutableLiveData<Result.Success<AuthToken>> successResult = new MutableLiveData<>();
+
+    private final MutableLiveData<Result.Error<Void>>  errorResult = new MutableLiveData<>();
+
+    private final MutableLiveData<Boolean> inputErrorResult = new MutableLiveData<>();
+
+
+    public LiveData<Result.Success<AuthToken>> getSuccessResult() {
+        return successResult;
     }
 
-    LiveData<LoginFormState> getLoginFormState() {
-        return loginFormState;
+    public LiveData<Result.Error<Void>> getErrorResult() {
+        return errorResult;
     }
 
-    LiveData<LoginResult> getLoginResult() {
-        return loginResult;
+    public MutableLiveData<Boolean> getInputErrorResult() {
+        return inputErrorResult;
     }
 
-    public void login(String username, String password) {
-        // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = loginRepository.login(username, password);
+    public void validateData(String phoneNumber, String pin) {
 
-        if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
-            loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
+        if (phoneNumber == null || phoneNumber.length() != 11 ||
+                pin == null || !Pattern.matches("\\d{4}", pin)) {
+            inputErrorResult.setValue(true);
         } else {
-            loginResult.setValue(new LoginResult(R.string.login_failed));
+            inputErrorResult.setValue(false);
         }
+
     }
 
-    public void loginDataChanged(String username, String password) {
-        if (!isUserNameValid(username)) {
-            loginFormState.setValue(new LoginFormState(R.string.invalid_username, null));
-        } else if (!isPasswordValid(password)) {
-            loginFormState.setValue(new LoginFormState(null, R.string.invalid_password));
+    public void signInUser(String type, String phoneNumber, String pin) {
+
+        UserApi service = Api.getConnection().create(UserApi.class);
+
+        Call<Result.Success<AuthToken>> call;
+
+        if (type.equals(User.TYPE_CUSTOMER)) {
+            Customer user = new Customer();
+            user.setType(type);
+            user.setPhoneNumber(phoneNumber);
+            user.setPin(pin);
+            call = service.customerSignIn(user);
         } else {
-            loginFormState.setValue(new LoginFormState(true));
+            Merchant user = new Merchant();
+            user.setType(type);
+            user.setPhoneNumber(phoneNumber);
+            user.setPin(pin);
+            call = service.merchantSignIn(user);
         }
+
+        call.enqueue(this);
     }
 
-    // A placeholder username validation check
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
-            return false;
-        }
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
+    @Override
+    public void onResponse(@NotNull Call<Result.Success<AuthToken>> call, @NotNull Response<Result.Success<AuthToken>> response) {
+
+        if (response.isSuccessful() && response.body() != null) {
+            Result.Success<AuthToken> r;
+            r = response.body();
+            successResult.setValue(r);
+        } else if (response.code() == 400) {
+            inputErrorResult.setValue(true);
         } else {
-            return !username.trim().isEmpty();
+            Result.Error<Void> r = ErrorParser.parseError(response);
+            errorResult.setValue(r);
         }
     }
 
-    // A placeholder password validation check
-    private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
-    }*/
+    @Override
+    public void onFailure(@NotNull Call<Result.Success<AuthToken>> call, @NotNull Throwable t) {
+        Result.Error<Void> error = new Result.Error<>(new IOException(t));
+        errorResult.setValue(error);
+    }
+
 
 }
 
